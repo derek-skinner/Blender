@@ -1,0 +1,13 @@
+// Clear Attributes
+@mixin clear($style) {
+    @if $style == 'clear-all' {
+        padding:0;
+        background-image:none;
+        background-color:transparent;
+        margin:0;
+        height:auto;
+        width:auto;
+        float:none;
+        border:none;
+    }
+}

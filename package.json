@@ -1,0 +1,11 @@
+{
+  "name": "Blender",
+  "version": "0.1.0",
+  "description": "Derek Skinner's Mixin Collection",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/derek-skinner/blender.git"
+  },
+  "author": "Derek Skinner",
+  "homepage": "https://github.com/derek-skinner/blender"
+}

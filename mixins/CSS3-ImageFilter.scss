@@ -1,0 +1,63 @@
+//CSS3 Image Filter Tools
+@mixin if-blur($amt: 4px) {
+  -o-filter: blur($amt);
+  -ms-filter: blur($amt);
+  -moz-filter: blur($amt);
+  -webkit-filter: blur($amt);
+}
+
+@mixin if-brightness($amt: 0.35) {
+  -o-filter: brightness($amt);
+  -ms-filter: brightness($amt);
+  -moz-filter: brightness($amt);
+  -webkit-filter: brightness($amt);
+}
+
+@mixin if-contrast($amt: 140%) {
+  -o-filter: contrast($amt);
+  -ms-filter: contrast($amt);
+  -moz-filter: contrast($amt);
+  -webkit-filter: contrast($amt);
+}
+
+@mixin if-grayscale($amt: 100%) {
+  -o-filter: grayscale($amt);
+  -ms-filter: grayscale($amt);
+  -moz-filter: grayscale($amt);
+  -webkit-filter: grayscale($amt);
+}
+
+@mixin if-huerotate($deg: 180deg) {
+  -o-filter: hue-rotate($deg);
+  -ms-filter: hue-rotate($deg);
+  -moz-filter: hue-rotate($deg);
+  -webkit-filter: hue-rotate($deg);
+}
+
+@mixin if-invert($amt: 100%) {
+  -o-filter: invert($amt);
+  -ms-filter: invert($amt);
+  -moz-filter: invert($amt);
+  -webkit-filter: invert($amt);
+}
+
+@mixin if-opacity($amt: 60%) {
+  -o-filter: opacity($amt);
+  -ms-filter: opacity($amt);
+  -moz-filter: opacity($amt);
+  -webkit-filter: opacity($amt);
+}
+
+@mixin if-saturate($amt: 4) {
+  -o-filter: saturate($amt);
+  -ms-filter: saturate($amt);
+  -moz-filter: saturate($amt);
+  -webkit-filter: saturate($amt);
+}
+
+@mixin if-sepia($amt: 100%) {
+  -o-filter: sepia($amt);
+  -ms-filter: sepia($amt);
+  -moz-filter: sepia($amt);
+  -webkit-filter: sepia($amt);
+}

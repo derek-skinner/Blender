@@ -1,0 +1,9 @@
+//@mixin for font-stacks, with an !important option.
+@mixin font-stack($important) {
+    $stack: Arial, Tahoma, Sans-Serif;
+    @if $important == 1 {
+        font-family: $stack !important;
+    } @else  if $important == 0 {
+        font-family: $stack;
+    }
+}

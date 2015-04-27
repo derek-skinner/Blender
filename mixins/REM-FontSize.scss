@@ -1,0 +1,11 @@
+//Set a rem font size with pixel fallback
+Rem is similar to the em value, but instead of being relative to the parent element it’srelative to the font-size set in the <html>.
+It has all the benefits of em but you don’t get issues with e.g (compounding) since rem is only relative to the html element. The bad part is there’s no support for rem units in IE8 and below. But with this mixin we can create a fallback to pixels when rem isn’t supported.
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);}
