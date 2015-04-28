@@ -1,0 +1,13 @@
+@mixin image-2x($image, $width, $height) {
+    @media
+        (-moz-min-device-pixel-ratio: 2),
+        (-o-min-device-pixel-ratio: 2/1),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-device-pixel-ratio: 2),
+        (min-resolution: 1.3dppx) {
+
+        // on retina, use image that's scaled by 2
+        background-image: url($image);
+    	background-size: 100%;
+    }
+}

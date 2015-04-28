@@ -1,0 +1,19 @@
+.shadow {
+  position: relative;
+  height: 50px;
+  width: 600px;
+  border: 1px solid #f7f7f7;
+  margin: 50px auto;
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: rgba(155,155,0, 0.25);
+      @include border-radius(30%); 
+      @include box-shadow(0 5px 10px 0px rgba(0, 0, 0, 0.3));
+      clip: rect(50px, auto, 70px, 0);
+    }
+}

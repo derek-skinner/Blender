@@ -27,6 +27,12 @@ In this file you will find usage examples for the mixins included in this projec
   @include opacity(0.8);
 }
 
+## Compass Retina Image Support
+
+//EXAMPLE
+background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
+@include image-2x("PATH/TO/IMAGE/FILE@2x.png", 200px, 50px);
+
 ## Double Ampersand
 
 //Usage
