@@ -2,14 +2,15 @@ In this file you will find usage examples for the mixins included in this projec
 
 ## Accesible Hiding
 
-//Usage
+##### Usage
+
 .offscreen {
   @include move-offscreen;
 }
 
 ## Animation Keyframes
 
-//Usage
+##### Usage
 @include keyframes(slide-down) {
   0% { opacity: 1; }
   90% { opacity: 0; }}
@@ -22,27 +23,28 @@ In this file you will find usage examples for the mixins included in this projec
 
 ## Cross Browser Opacity
 
-//Usage
+##### Usage
 .faded-text {
   @include opacity(0.8);
 }
 
 ## Compass Retina Image Support
 
-//EXAMPLE
+##### EXAMPLE
 background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 @include image-2x("PATH/TO/IMAGE/FILE@2x.png", 200px, 50px);
 
 ## Double Ampersand
 
-//Usage
+##### Usage
 .col {
   @include doubly(20px);
   float: left;
   width: 25%;
 }
 
-//Output
+##### Output
+
 .col {
   width: 25%;
   float: left;
@@ -59,7 +61,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 
 ## Element Positioning
 
-//Usage
+##### Usage
 .element {
   @include absolute(top 0 left 1em);
 }
@@ -68,7 +70,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
   @include fixed(top 1em left "WAT? A STRING?!" right 10% bottom)
 }
 
-//CSS Output
+##### CSS Output
 .element {
   position: absolute;
   top: 0;
@@ -83,7 +85,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 
 ## Element Sizing
 
-//Usage
+##### Usage
 .element {
   @include size(100%);
 }
@@ -92,7 +94,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
   @include size(100%, 1px);
 }
 
-//CSS Output
+##### CSS Output
 .element {
   width: 100%;
   height: 100%;
@@ -105,7 +107,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 
 ## Font Stacks
 
-// Usage
+##### Usage
 .important {
      @include  font-stack(1);
 }
@@ -116,19 +118,19 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 
 ## Overflow Ellipsis
 
-//Usage
+##### Usage
 .ellipsis {
   @include ellipsis;
 }
 
 ## REM Font Size
 
-//Usage
+##### Usage
 p {
   @include font-size(14px)
 }
 
-//Output
+##### Output
 p {
   font-size: 14px; //Will be overridden if browser supports rem
   font-size: 0.8rem;
@@ -136,7 +138,7 @@ p {
 
 ## Sass Breakpoints
 
-//Usage
+##### Usage
 .sidebar {
   width: 60%;
   float: left;
@@ -147,7 +149,7 @@ p {
     margin: 0;
   }}
 
-//Output
+##### Output
 .sidebar {
   width: 60%;
   float: left;
@@ -158,7 +160,7 @@ p {
 
 ## Transitions
 
-//Usage
+##### Usage
 a {
   color: gray;
   @include transition(color .3s ease);
@@ -168,7 +170,7 @@ a {
   
 ## Word Wrapping
 
-//Usage
+##### Usage
 .word-wrap {
   @include mixin word-wrap;
 }
