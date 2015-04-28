@@ -57,6 +57,52 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 	@include center;
 }
 
+## Element Positioning
+
+//Usage
+.element {
+  @include absolute(top 0 left 1em);
+}
+ 
+.other-element {
+  @include fixed(top 1em left "WAT? A STRING?!" right 10% bottom)
+}
+
+//CSS Output
+.element {
+  position: absolute;
+  top: 0;
+  left: 1em;
+}
+ 
+.other-element {
+  position: fixed;
+  top: 1em;
+  right: 10%;
+}
+
+## Element Sizing
+
+//Usage
+.element {
+  @include size(100%);
+}
+ 
+.other-element {
+  @include size(100%, 1px);
+}
+
+//CSS Output
+.element {
+  width: 100%;
+  height: 100%;
+}
+ 
+.other-element {
+  width: 100%;
+  height: 1px;
+}
+
 ## Font Stacks
 
 // Usage

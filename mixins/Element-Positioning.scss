@@ -1,0 +1,23 @@
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+        $i: index($args, $o);
+ 
+    @if $i and $i + 1< = length($args) and type-of(nth($args, $i + 1)) == number  {
+          #{$o}: nth($args, $i + 1);
+    }
+  }
+ 
+  position: $position;
+}
+ 
+@mixin absolute($args) {
+        @include position("absolute", $args);
+}
+ 
+@mixin fixed($args) {
+        @include position("fixed", $args);
+}
+ 
+@mixin relative($args) {
+        @include position("relative", $args);
+}
