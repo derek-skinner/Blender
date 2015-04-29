@@ -3,14 +3,15 @@ In this file you will find usage examples for the mixins included in this projec
 ## Accesible Hiding
 
 ##### Usage
-
+```
 .offscreen {
   @include move-offscreen;
 }
-
+```
 ## Animation Keyframes
 
 ##### Usage
+```
 @include keyframes(slide-down) {
   0% { opacity: 1; }
   90% { opacity: 0; }}
@@ -19,32 +20,47 @@ In this file you will find usage examples for the mixins included in this projec
   width: 100px;
   height: 100px;
   background: black;
-  @include animation('slide-down 5s 3');}
+  @include animation('slide-down 5s 3');
+  }
+  ```
+  ## Border Radius
 
+##### Usage
+```
+.box {
+  border: 3px solid #777;
+  @include rounded(0.5em);
+}
+```
 ## Cross Browser Opacity
 
 ##### Usage
+```
 .faded-text {
   @include opacity(0.8);
 }
-
+```
 ## Compass Retina Image Support
 
-##### EXAMPLE
+##### Usage
+```
+.element {
 background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 @include image-2x("PATH/TO/IMAGE/FILE@2x.png", 200px, 50px);
-
+}
+```
 ## Double Ampersand
 
 ##### Usage
+```
 .col {
   @include doubly(20px);
   float: left;
   width: 25%;
 }
-
+```
 ##### Output
-
+```
 .col {
   width: 25%;
   float: left;
@@ -52,40 +68,34 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 .col + .col {
   margin-left: 20px;
 }
-
+```
 ## Element Centering
-
+```
 .className {
 	@include center;
 }
-
+```
 ## Element Positioning
 
 ##### Usage
+```
 .element {
   @include absolute(top 0 left 1em);
 }
- 
-.other-element {
-  @include fixed(top 1em left "WAT? A STRING?!" right 10% bottom)
-}
+ ```
 
 ##### CSS Output
+```
 .element {
   position: absolute;
   top: 0;
   left: 1em;
 }
- 
-.other-element {
-  position: fixed;
-  top: 1em;
-  right: 10%;
-}
-
+ ```
 ## Element Sizing
 
 ##### Usage
+```
 .element {
   @include size(100%);
 }
@@ -93,8 +103,9 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 .other-element {
   @include size(100%, 1px);
 }
-
+```
 ##### CSS Output
+```
 .element {
   width: 100%;
   height: 100%;
@@ -104,10 +115,11 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
   width: 100%;
   height: 1px;
 }
-
+```
 ## Font Stacks
 
 ##### Usage
+```
 .important {
      @include  font-stack(1);
 }
@@ -115,62 +127,80 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 .not-important {
      @include  font-stack(0);
 }
-
+```
 ## Overflow Ellipsis
 
 ##### Usage
+```
 .ellipsis {
   @include ellipsis;
 }
-
+```
 ## REM Font Size
 
 ##### Usage
+```
 p {
   @include font-size(14px)
 }
-
+```
 ##### Output
+```
 p {
   font-size: 14px; //Will be overridden if browser supports rem
   font-size: 0.8rem;
 }
-
+```
 ## Sass Breakpoints
 
 ##### Usage
+```
 .sidebar {
   width: 60%;
   float: left;
   margin: 0 2% 0 0;
-  @include bp-small {
+  
+    @include bp-small {
     width: 100%;
     float: none;
     margin: 0;
-  }}
-
+  }
+  }
+```
 ##### Output
+```
 .sidebar {
   width: 60%;
   float: left;
   margin: 0 2% 0 0;
-  @media only screen and (max-width: 30){
-    .sidebar{width: 100%; float: none; margin: 0;}
-  }}
-
+  
+    @media only screen and (max-width: 30){
+      .sidebar {
+      width: 100%; 
+      float: none; 
+      margin: 0;
+      }
+  }
+  }
+```
 ## Transitions
 
 ##### Usage
+```
 a {
   color: gray;
   @include transition(color .3s ease);
-  &:hover {
+ 
+    &:hover {
     color: black;
-  }}
-  
+  }
+  }
+  ```
 ## Word Wrapping
 
 ##### Usage
+```
 .word-wrap {
   @include mixin word-wrap;
 }
+```
