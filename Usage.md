@@ -3,7 +3,7 @@ In this file you will find usage examples for the mixins included in this projec
 ## Accesible Hiding
 
 ##### Usage
-```
+```sass
 .offscreen {
   @include move-offscreen;
 }
@@ -11,7 +11,7 @@ In this file you will find usage examples for the mixins included in this projec
 ## Animation Keyframes
 
 ##### Usage
-```
+```sass
 @include keyframes(slide-down) {
   0% { opacity: 1; }
   90% { opacity: 0; }}
@@ -26,7 +26,7 @@ In this file you will find usage examples for the mixins included in this projec
   ## Border Radius
 
 ##### Usage
-```
+```sass
 .box {
   border: 3px solid #777;
   @include rounded(0.5em);
@@ -35,7 +35,7 @@ In this file you will find usage examples for the mixins included in this projec
 ## Cross Browser Opacity
 
 ##### Usage
-```
+```sass
 .faded-text {
   @include opacity(0.8);
 }
@@ -43,7 +43,7 @@ In this file you will find usage examples for the mixins included in this projec
 ## Compass Retina Image Support
 
 ##### Usage
-```
+```sass
 .element {
 background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 @include image-2x("PATH/TO/IMAGE/FILE@2x.png", 200px, 50px);
@@ -52,7 +52,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 ## Double Ampersand
 
 ##### Usage
-```
+```sass
 .col {
   @include doubly(20px);
   float: left;
@@ -60,7 +60,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 }
 ```
 ##### Output
-```
+```css
 .col {
   width: 25%;
   float: left;
@@ -70,7 +70,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 }
 ```
 ## Element Centering
-```
+```sass
 .className {
 	@include center;
 }
@@ -78,14 +78,14 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 ## Element Positioning
 
 ##### Usage
-```
+```sass
 .element {
   @include absolute(top 0 left 1em);
 }
  ```
 
 ##### CSS Output
-```
+```css
 .element {
   position: absolute;
   top: 0;
@@ -95,7 +95,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 ## Element Sizing
 
 ##### Usage
-```
+```sass
 .element {
   @include size(100%);
 }
@@ -105,7 +105,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 }
 ```
 ##### CSS Output
-```
+```css
 .element {
   width: 100%;
   height: 100%;
@@ -119,7 +119,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 ## Font Stacks
 
 ##### Usage
-```
+```sass
 .important {
      @include  font-stack(1);
 }
@@ -131,7 +131,7 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 ## Overflow Ellipsis
 
 ##### Usage
-```
+```sass
 .ellipsis {
   @include ellipsis;
 }
@@ -139,13 +139,13 @@ background: url("PATH/TO/IMAGE/FILE.png") no-repeat;
 ## REM Font Size
 
 ##### Usage
-```
+```sass
 p {
   @include font-size(14px)
 }
 ```
 ##### Output
-```
+```css
 p {
   font-size: 14px; //Will be overridden if browser supports rem
   font-size: 0.8rem;
@@ -154,7 +154,7 @@ p {
 ## Sass Breakpoints
 
 ##### Usage
-```
+```sass
 .sidebar {
   width: 60%;
   float: left;
@@ -168,7 +168,7 @@ p {
   }
 ```
 ##### Output
-```
+```css
 .sidebar {
   width: 60%;
   float: left;
@@ -186,7 +186,7 @@ p {
 ## Transitions
 
 ##### Usage
-```
+```sass
 a {
   color: gray;
   @include transition(color .3s ease);
@@ -199,7 +199,7 @@ a {
 ## Word Wrapping
 
 ##### Usage
-```
+```sass
 .word-wrap {
   @include mixin word-wrap;
 }
