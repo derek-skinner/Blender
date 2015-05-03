@@ -1,0 +1,296 @@
+// Accessible hiding
+@mixin move-offscreen() {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+// Animations and keyframes
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }
+  @keyframes $animation-name {
+    @content;
+  }}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin image-2x($image, $width, $height) {
+    @media
+        (-moz-min-device-pixel-ratio: 2),
+        (-o-min-device-pixel-ratio: 2/1),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-device-pixel-ratio: 2),
+        (min-resolution: 1.3dppx) {
+
+        // on retina, use image that's scaled by 2
+        background-image: url($image);
+    	background-size: 100%;
+    }
+}
+
+//Mixin
+@mixin doubly($margin) {
+  & + & {
+    margin-left: $margin;
+    @content;
+  }
+}
+
+.shadow {
+  position: relative;
+  height: 50px;
+  width: 600px;
+  border: 1px solid #f7f7f7;
+  margin: 50px auto;
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: rgba(155,155,0, 0.25);
+      @include border-radius(30%); 
+      @include box-shadow(0 5px 10px 0px rgba(0, 0, 0, 0.3));
+      clip: rect(50px, auto, 70px, 0);
+    }
+}
+
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+        $i: index($args, $o);
+ 
+    @if $i and $i + 1< = length($args) and type-of(nth($args, $i + 1)) == number  {
+          #{$o}: nth($args, $i + 1);
+    }
+  }
+ 
+  position: $position;
+}
+ 
+@mixin absolute($args) {
+        @include position("absolute", $args);
+}
+ 
+@mixin fixed($args) {
+        @include position("fixed", $args);
+}
+ 
+@mixin relative($args) {
+        @include position("relative", $args);
+}
+
+@mixin size($width, $height: $width) {
+      width: $width;
+      height: $height;
+}
+
+@mixin font-smoothing() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include text-shadow(0, 0, 1px, rgba(#fff, 0.02));
+}
+
+@mixin rounded($amount) {
+  -moz-border-radius: $amount;
+  -webkit-border-radius: $amount;
+  border-radius: $amount;
+}
+
+// Center elements on either axis, or both
+@mixin center($axis: "both") {
+	position: absolute;
+	@if $axis "y" {
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	@if $axis "x" {
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	@if $axis "both" {
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+// Clear Attributes
+@mixin clear($style) {
+    @if $style == 'clear-all' {
+        padding:0;
+        background-image:none;
+        background-color:transparent;
+        margin:0;
+        height:auto;
+        width:auto;
+        float:none;
+        border:none;
+    }
+}
+
+//Cross browser opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//CSS3 Image Filter Tools
+@mixin if-blur($amt: 4px) {
+  -o-filter: blur($amt);
+  -ms-filter: blur($amt);
+  -moz-filter: blur($amt);
+  -webkit-filter: blur($amt);
+}
+
+@mixin if-brightness($amt: 0.35) {
+  -o-filter: brightness($amt);
+  -ms-filter: brightness($amt);
+  -moz-filter: brightness($amt);
+  -webkit-filter: brightness($amt);
+}
+
+@mixin if-contrast($amt: 140%) {
+  -o-filter: contrast($amt);
+  -ms-filter: contrast($amt);
+  -moz-filter: contrast($amt);
+  -webkit-filter: contrast($amt);
+}
+
+@mixin if-grayscale($amt: 100%) {
+  -o-filter: grayscale($amt);
+  -ms-filter: grayscale($amt);
+  -moz-filter: grayscale($amt);
+  -webkit-filter: grayscale($amt);
+}
+
+@mixin if-huerotate($deg: 180deg) {
+  -o-filter: hue-rotate($deg);
+  -ms-filter: hue-rotate($deg);
+  -moz-filter: hue-rotate($deg);
+  -webkit-filter: hue-rotate($deg);
+}
+
+@mixin if-invert($amt: 100%) {
+  -o-filter: invert($amt);
+  -ms-filter: invert($amt);
+  -moz-filter: invert($amt);
+  -webkit-filter: invert($amt);
+}
+
+@mixin if-opacity($amt: 60%) {
+  -o-filter: opacity($amt);
+  -ms-filter: opacity($amt);
+  -moz-filter: opacity($amt);
+  -webkit-filter: opacity($amt);
+}
+
+@mixin if-saturate($amt: 4) {
+  -o-filter: saturate($amt);
+  -ms-filter: saturate($amt);
+  -moz-filter: saturate($amt);
+  -webkit-filter: saturate($amt);
+}
+
+@mixin if-sepia($amt: 100%) {
+  -o-filter: sepia($amt);
+  -ms-filter: sepia($amt);
+  -moz-filter: sepia($amt);
+  -webkit-filter: sepia($amt);
+}
+
+//@mixin for font-stacks, with an !important option.
+@mixin font-stack($important) {
+    $stack: Arial, Tahoma, Sans-Serif;
+    @if $important == 1 {
+        font-family: $stack !important;
+    } @else  if $important == 0 {
+        font-family: $stack;
+    }
+}
+
+// Overflow Ellipsis
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+//Set a rem font size with pixel fallback
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// Breakpoints
+@mixin bp-large {
+  @media only screen and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+
+//Transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Word Wrapping
+@mixin word-wrap() {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
