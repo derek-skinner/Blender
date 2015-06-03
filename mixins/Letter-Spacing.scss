@@ -1,0 +1,9 @@
+$ls: 0;
+.ls {
+    @while $ls <= 20 {
+        &--#{$ls} {
+            letter-spacing: #{$ls}px;
+        }
+        $ls: $ls + 1;
+    }
+}

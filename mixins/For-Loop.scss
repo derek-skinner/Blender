@@ -1,0 +1,11 @@
+.list {
+    @for $i from 1 through 10 {
+        &[data-count="#{$i}"] {
+
+            .list__item {
+                width: ((100% / $i) - 1);
+            }
+
+        }
+    }
+}

@@ -294,3 +294,68 @@
   -moz-hyphens: auto;
   hyphens: auto;
 }
+
+
+//For Loop
+.list {
+    @for $i from 1 through 10 {
+        &[data-count="#{$i}"] {
+
+            .list__item {
+                width: ((100% / $i) - 1);
+            }
+
+        }
+    }
+}
+
+//Sass-Map
+$types: (
+    primary: (
+        background: #000000
+    ),
+    secondary: (
+        background: #FFFFFF,
+        color: #000000
+    )
+);
+
+
+.type {
+    @each $type, $styles in $types {
+        &--#{$type} {
+        
+            @each $property, $style in $styles {
+                #{$property}: $style;
+            }
+
+        }
+    }
+}
+
+//Greyscale
+@mixin grayscale_element($value) {
+    -webkit-filter: #{"grayscale(#{$value})"};
+    -moz-filter: #{"grayscale(#{$value})"};
+    filter:#{"grayscale(#{$value})"};
+}
+
+$value: 50%;
+
+.grayscale {
+    @include grayscale_element(#{$value});
+    &:hover {
+        @include grayscale_element(0);
+    }
+}
+
+//Letter-Spacing
+$ls: 0;
+.ls {
+    @while $ls <= 20 {
+        &--#{$ls} {
+            letter-spacing: #{$ls}px;
+        }
+        $ls: $ls + 1;
+    }
+}

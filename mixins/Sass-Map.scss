@@ -1,0 +1,22 @@
+$types: (
+    primary: (
+        background: #000000
+    ),
+    secondary: (
+        background: #FFFFFF,
+        color: #000000
+    )
+);
+
+
+.type {
+    @each $type, $styles in $types {
+        &--#{$type} {
+        
+            @each $property, $style in $styles {
+                #{$property}: $style;
+            }
+
+        }
+    }
+}
