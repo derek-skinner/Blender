@@ -1,11 +1,20 @@
 {
-  "name": "Blender",
-  "version": "0.1.0",
-  "description": "Derek Skinner's Mixin Collection",
+  "name": "sass-blender",
+  "version": "1.0.1",
+  "description": "Sass mixin collection",
+  "main": "eyeglass-exports.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Derek Skinner",
+    "url": "https://github.com/derek-skinner"
+  },
+  "keywords": ["sass", "mixin", "collection", "eyeglass-module"],
+  "license": "MIT",
+  "README": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/derek-skinner/blender.git"
-  },
-  "author": "Derek Skinner",
-  "homepage": "https://github.com/derek-skinner/blender"
+    "url": "https://github.com/derek-skinner/Blender.git"
+  }
 }

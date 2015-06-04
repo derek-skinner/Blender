@@ -10,7 +10,12 @@ You can either add the dist/_blender.scss file for all of the mixins or just tak
 
 Please reference the Usage.md file included with this project if you need any help on using the included mixins. 
 
+### Eyeglass Module
+Blender is now available as an [Eyeglass Module](https://github.com/sass-eyeglass/eyeglass). 
 
+```
+npm install sass-blender --save-dev
+```
 ## Contributing
 
 1. Fork it!
