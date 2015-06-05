@@ -6,7 +6,7 @@ A collection of SCSS `@mixins`.
 
 ## Usage
 
-You can either add the dist/_blender.scss file for all of the mixins or just take the specific scss files that you need from the "Mixins" folder and add them to your project individually.
+You can either add the sass/index.scss file for all of the mixins or just take the specific scss files that you need from the "Mixins" folder and add them to your project individually.
 
 Please reference the Usage.md file included with this project if you need any help on using the included mixins. 
 
